@@ -1,5 +1,5 @@
 module.exports =
 {
-  connectionString:'mongodb://localhost:27017/nodecube',
+  connectionString:'mongodb://mongo:27017/nodecube',
   dbname:'nodecube'
 }

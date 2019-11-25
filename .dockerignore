@@ -1,0 +1,8 @@
+# Docker mongo data volume
+mongo_data/
+
+node_modules/
+
+private/
+cubecobrasecrets.example/
+dist/

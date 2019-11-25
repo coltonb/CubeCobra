@@ -1,0 +1,24 @@
+version: "2"
+services:
+  cubecobra:
+    restart: always
+    build: .
+    command: npm run docker
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    environment:
+      WAIT_HOSTS: mongo
+    volumes:
+      - .:/CubeCobra
+      - ./cubecobrasecrets.example:/cubecobrasecrets
+      - /CubeCobra/node_modules
+      - /CubeCobra/private
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./mongo_data:/data/db
+    ports:
+      - "27017:27017"
